@@ -7,7 +7,7 @@ class ListViewFeatures extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListView.builder(
-      padding: const EdgeInsets.symmetric(horizontal: 15),
+     
       scrollDirection: Axis.horizontal,
       itemBuilder: (context, index) {
         return const Padding(
