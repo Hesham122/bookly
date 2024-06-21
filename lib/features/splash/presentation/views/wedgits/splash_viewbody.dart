@@ -1,8 +1,36 @@
+import 'package:bookly_app/constants.dart';
 import 'package:bookly_app/core/utils/assets.dart';
+import 'package:bookly_app/features/home/presentation/views/home.dart';
+import 'package:bookly_app/features/splash/presentation/views/wedgits/animationtext.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
-class SplashViewBody extends StatelessWidget {
+class SplashViewBody extends StatefulWidget {
   const SplashViewBody({super.key});
+
+  @override
+  State<SplashViewBody> createState() => _SplashViewBodyState();
+}
+
+class _SplashViewBodyState extends State<SplashViewBody>
+    with SingleTickerProviderStateMixin {
+  late AnimationController animationController;
+  late Animation<Offset> slidingAnimation;
+  late Animation<Offset> slidelogo;
+  @override
+  void initState() {
+    super.initState();
+    initslideAnimation();
+    navigatebetweenpages();
+  }
+
+  
+
+  @override
+  void dispose() {
+    animationController.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -10,15 +38,37 @@ class SplashViewBody extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.center,
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
-        Image.asset(AssetsData.logo),
+        AnimatedBuilder(
+            animation: slidelogo,
+            builder: (context, _) {
+              return SlideTransition(
+                  position: slidelogo, child: Image.asset(AssetsData.logo));
+            }),
         const SizedBox(
           height: 5,
         ),
-        const Text(
-          "Read Free Books",
-          textAlign: TextAlign.center,
-        )
+        AnimationText(slidingAnimation: slidingAnimation),
       ],
+    );
+  }
+
+  void initslideAnimation() {
+    animationController =
+        AnimationController(vsync: this, duration: const Duration(seconds: 1));
+    slidingAnimation =
+        Tween<Offset>(begin: const Offset(0, 1), end: Offset.zero)
+            .animate(animationController);
+    slidelogo = Tween(begin: const Offset(5, 0), end: Offset.zero)
+        .animate(animationController);
+    // Start the animation
+    animationController.forward();
+  }
+  void navigatebetweenpages() {
+    Future.delayed(
+      const Duration(seconds: 2),
+      () {
+        Get.to(const Home(),duration:transitionTime,transition: Transition.fade);
+      },
     );
   }
 }
