@@ -24,43 +24,11 @@ class HomeViewBody extends StatelessWidget {
             "BestSeller",
             style: Styles.titlemedium,
           ),
-        const  BestSellerListViewItem()
+       
         ],
       ),
     );
   }
 }
 
-class BestSellerListViewItem extends StatelessWidget {
-  const BestSellerListViewItem({super.key});
 
-  @override
-  Widget build(BuildContext context) {
-    return Row(
-      children: [
-        SizedBox(
-          height: 125,
-          child: AspectRatio(
-            aspectRatio: 1.2 / 2,
-            child: Container(
-              decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(15),
-                  image: const DecorationImage(
-                      fit: BoxFit.fill,
-                      image: NetworkImage(
-                          "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQVGLLD4zMRyPqE80Lz6etxNFc7c8NVVZQq0g&s"))),
-            ),
-          ),
-        ),
-        const SizedBox(
-          width: 28,
-        ),
-      const  Column(
-          children: [
-             Text("data")
-          ],
-        )
-      ],
-    );
-  }
-}
