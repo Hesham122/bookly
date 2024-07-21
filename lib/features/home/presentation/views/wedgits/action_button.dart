@@ -18,7 +18,7 @@ class ActionButton extends StatelessWidget {
         )),
         Expanded(
             child: CustomButton(
-              fontsize: 16,
+          fontsize: 16,
           backgroudcolor: Color(0xffEF8262),
           textcolor: Colors.white,
           text: "Free preview",

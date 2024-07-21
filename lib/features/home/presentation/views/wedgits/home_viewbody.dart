@@ -2,7 +2,7 @@ import 'package:bookly_app/core/utils/styles.dart';
 import 'package:bookly_app/features/home/presentation/views/wedgits/custom_appbar.dart';
 import 'package:bookly_app/features/home/presentation/views/wedgits/list_view_best_seller.dart';
 import 'package:bookly_app/features/home/presentation/views/wedgits/list_viewfeature.dart';
- 
+
 import 'package:flutter/material.dart';
 
 class HomeViewBody extends StatelessWidget {
@@ -13,7 +13,7 @@ class HomeViewBody extends StatelessWidget {
     return CustomScrollView(
       slivers: [
         SliverToBoxAdapter(
-          child:Column(
+          child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               const Padding(
@@ -33,17 +33,13 @@ class HomeViewBody extends StatelessWidget {
                   style: Styles.textstyle18,
                 ),
               ),
-             
             ],
-          ) ,
+          ),
         ),
         const SliverFillRemaining(
           child: ListViewBestSeller(),
         )
-
       ],
     );
-
-    
   }
 }

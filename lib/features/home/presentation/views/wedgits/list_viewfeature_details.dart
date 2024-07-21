@@ -7,13 +7,12 @@ class ListViewFeatureDetails extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-          height: MediaQuery.of(context).size.height * .15,
+      height: MediaQuery.of(context).size.height * .15,
       child: ListView.builder(
-       
         scrollDirection: Axis.horizontal,
         itemBuilder: (context, index) {
           return const Padding(
-            padding: EdgeInsets.symmetric(horizontal:8),
+            padding: EdgeInsets.symmetric(horizontal: 8),
             child: ListViewItem(),
           );
         },

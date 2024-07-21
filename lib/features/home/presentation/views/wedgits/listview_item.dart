@@ -8,8 +8,8 @@ class ListViewItem extends StatelessWidget {
     return AspectRatio(
       aspectRatio: 1.2 / 2,
       child: Container(
-        decoration:  BoxDecoration(
-          borderRadius: BorderRadius.circular(12),
+        decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(12),
             image: const DecorationImage(
                 fit: BoxFit.fill,
                 image: NetworkImage(
