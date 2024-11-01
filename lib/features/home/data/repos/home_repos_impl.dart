@@ -22,9 +22,10 @@ class HomeReposImpl implements HomeRepo {
       }
       return right(booklists);
     } catch (e) {
-      if (e is DioException) {
-        return left(ServerFailure.fromDioError(e));
-      }
+      
+      // if (e is DioException) {
+      //   return left(ServerFailure.fromDioError(e));
+      // }
       return left(ServerFailure(e.toString()));
     
     }

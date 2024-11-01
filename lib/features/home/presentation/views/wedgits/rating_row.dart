@@ -12,7 +12,7 @@ class RatingRow extends StatelessWidget {
     return const Row(
       children: [
         Text(
-          "19.99 €",
+          "Free",
           style: Styles.textstyle15,
         ),
         Spacer(),
