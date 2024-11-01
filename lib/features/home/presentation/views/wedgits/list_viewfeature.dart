@@ -14,11 +14,16 @@ class ListViewFeatures extends StatelessWidget {
       builder: (context, state) {
         if (state is FeaturedBooksSuccessful) {
           return ListView.builder(
+            physics: const BouncingScrollPhysics(),
+            itemCount: state.successBooks.length,
             scrollDirection: Axis.horizontal,
             itemBuilder: (context, index) {
-              return const Padding(
-                padding: EdgeInsets.symmetric(horizontal: 8),
-                child: ListViewItem(),
+              return Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 8),
+                child: ListViewItem(
+                  imgUrl:state
+                      .successBooks[index].volumeInfo.imageLinks.thumbnail,
+                ),
               );
             },
           );

@@ -13,7 +13,7 @@ class ListViewFeatureDetails extends StatelessWidget {
         itemBuilder: (context, index) {
           return const Padding(
             padding: EdgeInsets.symmetric(horizontal: 8),
-            child: ListViewItem(),
+            child: ListViewItem(imgUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQVGLLD4zMRyPqE80Lz6etxNFc7c8NVVZQq0g&s",),
           );
         },
       ),
